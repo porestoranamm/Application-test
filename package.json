@@ -1,0 +1,28 @@
+{
+  "name": "podcast-app",
+  "version": "1.0.0",
+  "description": "Kuznetsov Podcast App",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/porestoranamm/Application-test.git"
+  },
+  "keywords": [
+    "js",
+    "javascript"
+  ],
+  "author": "Nikita Kuznetsov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/porestoranamm/Application-test/issues"
+  },
+  "homepage": "https://github.com/porestoranamm/Application-test#readme",
+  "devDependencies": {
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.6.0"
+  }
+}
