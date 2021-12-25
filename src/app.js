@@ -3,7 +3,7 @@ import {isValid} from './utils'
 
 const form = document.getElementById('form')
 const input = form.querySelector('#question-input')
-const submit = form.querySelector('#submit')
+const submitBtn = form.querySelector('#submit')
 
 
 form.addEventListener('submit', submitFormHandler)
@@ -16,7 +16,9 @@ function submitFormHandler(event) {
             text: input.value.trim(),
             date: new Date().toJSON()
         }
-
+        submitBtn.disabled = true
         // Async request to server to save question
+        console.log('Question, question')
+        input.value = ''
     }
 }
