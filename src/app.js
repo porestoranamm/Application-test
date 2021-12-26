@@ -7,6 +7,9 @@ const submitBtn = form.querySelector('#submit')
 
 
 form.addEventListener('submit', submitFormHandler)
+input.addEventListener('input', () => {
+    submitBtn.disabled = !isValid(input.value)
+})
 
 function submitFormHandler(event) {
     event.preventDefault()
@@ -20,5 +23,7 @@ function submitFormHandler(event) {
         // Async request to server to save question
         console.log('Question, question')
         input.value = ''
+        input.className = ''
+        submitBtn.disabled = false
     }
 }
