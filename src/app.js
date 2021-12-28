@@ -1,3 +1,4 @@
+import {Question} from './question'
 import './styles.css'
 import {isValid} from './utils'
 
@@ -21,9 +22,10 @@ function submitFormHandler(event) {
         }
         submitBtn.disabled = true
         // Async request to server to save question
-        console.log('Question, question')
+        Question.create(question).then(() => {
         input.value = ''
         input.className = ''
         submitBtn.disabled = false
+        })  
     }
 }
