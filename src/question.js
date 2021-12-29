@@ -9,7 +9,13 @@ class Question {
         })
         .then(response => response.json())
         .then(response => {
-            console.log(response)
+            question.id = response.name
+            return question
         })
+        .then()
     }
+}
+
+function addToLocalStorage(question) {
+    localStorage.setItem('questions', JSON.stringify(question))
 }
