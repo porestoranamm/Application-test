@@ -12,7 +12,7 @@ class Question {
             question.id = response.name
             return question
         })
-        .then()
+        .then(addToLocalStorage)
     }
 }
 
