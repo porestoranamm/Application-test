@@ -1,6 +1,6 @@
 import {Question} from './question'
 import './styles.css'
-import {isValid} from './utils'
+import {createModal, isValid} from './utils'
 
 const form = document.getElementById('form')
 const modalBtn = document.getElementById('modal-btn')
@@ -33,5 +33,5 @@ function submitFormHandler(event) {
 }
 
 function openModal() {
-    
+    createModal('Авторизация', <h1>test</h1>)
 }
