@@ -13,9 +13,16 @@ class Question {
             return question
         })
         .then(addToLocalStorage)
+        .then()
     }
 }
 
 function addToLocalStorage(question) {
+    const all = getQuestionsFromLocalStorage()
+    all.push(question)
     localStorage.setItem('questions', JSON.stringify(question))
+}
+
+function getQuestionsFromLocalStorage() {
+    return JSON.parse(localStorage.getItem('questions') || '[]')
 }
