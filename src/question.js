@@ -13,7 +13,15 @@ class Question {
             return question
         })
         .then(addToLocalStorage)
-        .then()
+        .then(Question.renderList)
+    }
+
+    static renderList() {
+        const questions = getQuestionsFromLocalStorage()
+
+        const html = questions.length
+        ? questions.map(toCard).join('')
+        : `<div class="mui--text-headline">Вы пока ничего не спрашивали</div>`
     }
 }
 
@@ -25,4 +33,8 @@ function addToLocalStorage(question) {
 
 function getQuestionsFromLocalStorage() {
     return JSON.parse(localStorage.getItem('questions') || '[]')
+}
+
+function toCard(question) {
+
 }
