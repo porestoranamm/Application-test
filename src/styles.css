@@ -64,3 +64,11 @@
   overflow-y: auto;
   background: #fff;
 }
+
+.modal h1 {
+  text-align: center;
+}
+
+.modal .modal-content {
+  padding: 1rem;
+}
