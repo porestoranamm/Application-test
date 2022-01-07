@@ -17,7 +17,7 @@ class Question {
     }
 
     static fetch(token) {
-        fetch('https://application-podcast-app-default-rtdb.europe-west1.firebasedatabase.app/question.json')
+        fetch(`https://application-podcast-app-default-rtdb.europe-west1.firebasedatabase.app/question.json?auth=${token}`)
         .then(response => response.json())
         .then(questions => {
             console.log('Questions', questions) 
