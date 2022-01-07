@@ -35,4 +35,14 @@ function submitFormHandler(event) {
 
 function openModal() {
     createModal('Авторизация', getAuthForm())
+    document
+    .getElementById('auth-form')
+    .addEventListener('submit', authFormHandler, {once: true})
+}
+
+function authFormHandler(event) {
+    event.preventDefault()
+
+    const email = event.target.querySelector('#email').value
+    const password = event.target.querySelector('#password').value
 }
