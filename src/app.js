@@ -1,3 +1,4 @@
+import {getAuthForm} from './auth'
 import {Question} from './question'
 import './styles.css'
 import {createModal, isValid} from './utils'
@@ -33,5 +34,5 @@ function submitFormHandler(event) {
 }
 
 function openModal() {
-    createModal('Авторизация', <h1>test</h1>)
+    createModal('Авторизация', getAuthForm())
 }
