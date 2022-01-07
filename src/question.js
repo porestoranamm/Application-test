@@ -16,6 +16,14 @@ class Question {
         .then(Question.renderList)
     }
 
+    static fetch(token) {
+        fetch('https://application-podcast-app-default-rtdb.europe-west1.firebasedatabase.app/question.json')
+        .then(response => response.json())
+        .then(questions => {
+            console.log('Questions', questions) 
+        })
+    }
+
     static renderList() {
         const questions = getQuestionsFromLocalStorage()
 
