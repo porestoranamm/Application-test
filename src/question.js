@@ -17,7 +17,10 @@ class Question {
     }
 
     static fetch(token) {
-        fetch(`https://application-podcast-app-default-rtdb.europe-west1.firebasedatabase.app/question.json?auth=${token}`)
+        if (!token) {
+            return Promise.resolve('<p class="error">У вас нет токена</p>')
+        }
+        return fetch(`https://application-podcast-app-default-rtdb.europe-west1.firebasedatabase.app/question.json?auth=${token}`)
         .then(response => response.json())
         .then(questions => {
             console.log('Questions', questions) 
