@@ -23,7 +23,14 @@ class Question {
         return fetch(`https://application-podcast-app-default-rtdb.europe-west1.firebasedatabase.app/question.json?auth=${token}`)
         .then(response => response.json())
         .then(questions => {
-            console.log('Questions', questions) 
+            if (response.error) {
+                return `<p class="error">${questions.error}</p>`
+            }
+
+            return response ? Object.keys(response).map(key => ({
+                ...response[key],
+                id:key
+            })) : []
         })
     }
 
