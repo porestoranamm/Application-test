@@ -1,4 +1,4 @@
-import {getAuthForm} from './auth'
+import {authWithEmailAndPassword, getAuthForm} from './auth'
 import {Question} from './question'
 import './styles.css'
 import {createModal, isValid} from './utils'
@@ -45,4 +45,6 @@ function authFormHandler(event) {
 
     const email = event.target.querySelector('#email').value
     const password = event.target.querySelector('#password').value
+
+    authWithEmailAndPassword(email, password)
 }
