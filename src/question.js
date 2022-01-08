@@ -45,6 +45,12 @@ class Question {
 
         list.innerHTML = html
     }
+
+    static listTOHTML(questions) {
+        return questions.length
+        ? `<ol>${questions.map(q => `<li>${q.text}</li>`).join('')}</ol>`
+        : '<p>Вопросов пока нет</p>'
+    }
 }
 
 function addToLocalStorage(question) {
