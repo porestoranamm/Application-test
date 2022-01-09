@@ -23,7 +23,7 @@ class Question {
         return fetch(`https://application-podcast-app-default-rtdb.europe-west1.firebasedatabase.app/question.json?auth=${token}`)
         .then(response => response.json())
         .then(questions => {
-            if (response.error) {
+            if (response && response.error) {
                 return `<p class="error">${questions.error}</p>`
             }
 
@@ -46,7 +46,7 @@ class Question {
         list.innerHTML = html
     }
 
-    static listTOHTML(questions) {
+    static listToHTML(questions) {
         return questions.length
         ? `<ol>${questions.map(q => `<li>${q.text}</li>`).join('')}</ol>`
         : '<p>Вопросов пока нет</p>'
